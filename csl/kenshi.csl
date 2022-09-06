@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<style
+  xmlns="http://purl.org/net/xbiblio/csl"
+  version="1.0"
+  class="in-text"
+>
+
+  <info>
+    <title>電学研資</title>
+    <id>517b00db-5264-44d2-901e-40c96d367d91</id>
+    <updated>2022-09-06T15:31:00+09:00</updated>
+  </info>
+
+  <macro name="author">
+  </macro>
+
+  <citaiton>
+    <sort>
+      <key variable="citation-number" />
+    </sort>
+    <layout>
+      <text variable="citation-number"/>
+    </layout>
+  </citaiton>
+
+  <bibliography>
+    <layout>
+      <text variable="citation-number" prefix="[" suffix="]" />
+      <text macro="author" suffix=", " />
+      <text variable="title" />
+    </layout>
+  </bibliography>
+</style>
