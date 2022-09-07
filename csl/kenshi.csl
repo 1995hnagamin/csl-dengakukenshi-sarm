@@ -3,31 +3,72 @@
   xmlns="http://purl.org/net/xbiblio/csl"
   version="1.0"
   class="in-text"
+  default-locale="en-US"
 >
 
   <info>
     <title>電学研資</title>
     <id>517b00db-5264-44d2-901e-40c96d367d91</id>
-    <updated>2022-09-06T15:31:00+09:00</updated>
+    <updated>2022-09-07T23:38:00+09:00</updated>
   </info>
 
+  <locale xml:lang="ja">
+    <terms>
+      <term name="and">and</term>
+    </terms>
+  </locale>
+
+  <locale xml:lang="en">
+    <terms>
+      <term name="page-range-delimiter">-yee-</term>
+    </terms>
+  </locale>
+
   <macro name="author">
+    <names variable="author">
+      <name initialize-with="." and="text" delimiter=", " />
+    </names>
   </macro>
 
-  <citaiton>
+  <citation>
     <sort>
       <key variable="citation-number" />
     </sort>
     <layout>
       <text variable="citation-number"/>
     </layout>
-  </citaiton>
+  </citation>
 
   <bibliography>
     <layout>
-      <text variable="citation-number" prefix="[" suffix="]" />
-      <text macro="author" suffix=", " />
-      <text variable="title" />
+      <group delimiter=" ">
+        <text variable="citation-number" prefix="[" suffix="]" />
+        <text macro="author" suffix=":" />
+        <text variable="title" prefix="``" suffix=",''" />
+        <group delimiter=", ">
+          <text variable="container-title" form="short" prefix="\textit{" suffix="}" />
+          <group delimiter=" ">
+            <text term="volume" form="short" text-case="capitalize-first" />
+            <number variable="volume" />
+          </group>
+          <group delimiter=" ">
+            <text term="issue" form="short" text-case="capitalize-first" />
+            <number variable="issue" />
+          </group>
+          <group delimiter=" ">
+            <label variable="page" form="short" />
+            <text variable="page" />
+          </group>
+          <group delimiter=" ">
+            <text value="Art."/>
+            <text term="issue" form="short" />
+            <number variable="number" />
+          </group>
+        </group>
+        <date variable="issued">
+          <date-part name="year" prefix="(" suffix=")" />
+        </date>
+      </group>
     </layout>
   </bibliography>
 </style>
